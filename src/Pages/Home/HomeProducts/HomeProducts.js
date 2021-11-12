@@ -27,7 +27,7 @@ const HomeProducts = () =>
                 {
                     (homeProducts.length === 0) ?
                         <div className="d-flex justify-content-center align-items-center py-5">
-                            <Spinner animation="border" variant="success" />
+                            <Spinner animation="border" variant="info" />
                         </div> :
                         <Row xs={1} md={3} className="g-4 py-4 py-lg-5">
                             {
@@ -54,7 +54,7 @@ const HomeProducts = () =>
                         </Row>
                 }
                 <Nav.Link as={HashLink} to="/explore-product#explore-product" className="text-center pb-4">
-                    <Button variant="dark" className="rounded-pill px-4 py-lg-3">Explore Our Products</Button>
+                    <Button variant="dark" className="rounded-pill px-4 py-lg-3 shadow">Explore Our Products</Button>
                 </Nav.Link>
             </Container>
         </div>

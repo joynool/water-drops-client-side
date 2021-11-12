@@ -12,6 +12,13 @@ import NotFound from './Pages/NotFound/NotFound';
 import ExploreProducts from './Pages/ExploreProducts/ExploreProducts';
 import Orders from './Pages/Orders/Orders';
 import ReviewItem from './Pages/Home/Reviews/ReviewItem/ReviewItem';
+import AuthProvider from './Context/AuthProvider';
+import Login from './Pages/Authentication/Login/Login';
+import PrivateRoute from './Pages/Authentication/PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
+import Payment from './Pages/Dashboard/Payment/Payment';
+import Reviews from './Pages/Home/Reviews/Reviews/Reviews';
 
 /*------------------------------------------------------------------
     Use context API to pass data and implement React router DOM
@@ -20,30 +27,47 @@ function App ()
 {
   return (
     <>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/explore-product">
-            <ExploreProducts />
-          </Route>
-          <Route path="/review-item/:productName">
-            <ReviewItem />
-          </Route>
-          <Route path="/order/:id">
-            <Orders />
-          </Route>
-          <Route>
-            <NotFound />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/explore-product">
+              <ExploreProducts />
+            </Route>
+            <Route path="/reviews">
+              <Reviews />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <PrivateRoute path="/review-item/:productName">
+              <ReviewItem />
+            </PrivateRoute>
+            <PrivateRoute path="/order/:id">
+              <Orders />
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
+            </PrivateRoute>
+            <PrivateRoute path="/my-order">
+              <MyOrder />
+            </PrivateRoute>
+            <PrivateRoute path="/payment">
+              <Payment />
+            </PrivateRoute>
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </AuthProvider>
     </>
   );
 }

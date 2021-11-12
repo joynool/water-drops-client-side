@@ -2,10 +2,12 @@ import React from 'react';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import { Col, Form, Row, Button } from 'react-bootstrap';
+import useAuth from '../../../../hooks/useAuth';
 
 const ReviewItem = () =>
 {
     const { productName } = useParams();
+    const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
 
     //Create new service to mongodb
@@ -20,7 +22,7 @@ const ReviewItem = () =>
             .then(result =>
             {
                 if (result.insertedId) {
-                    alert('Successfully added your new service');
+                    alert('Thank you for sharing us your valuable review...');
                     reset();
                 }
             });
@@ -48,15 +50,15 @@ const ReviewItem = () =>
                     <Row className="mb-3">
                         <Form.Group as={Col}>
                             <Form.Label>Your Name</Form.Label>
-                            <Form.Control {...register("customerName")} defaultValue="Sk. Md. Joynool Abedin" required />
+                            <Form.Control {...register("customerName")} defaultValue={user.displayName} required />
                         </Form.Group>
 
                         <Form.Group as={Col}>
                             <Form.Label>Your Email</Form.Label>
-                            <Form.Control {...register("customerEmail")} defaultValue="mithun55@gmail.com" type="email" required />
+                            <Form.Control {...register("customerEmail")} defaultValue={user.email} type="email" required />
                         </Form.Group>
                     </Row>
-                    <Button variant="dark" type="submit">
+                    <Button variant="dark" type="submit" className="shadow">
                         Submit Your Review
                     </Button>
                 </Form>

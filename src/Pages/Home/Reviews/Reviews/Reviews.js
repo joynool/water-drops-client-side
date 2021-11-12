@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Carousel, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
 
-const Review = () =>
+const Reviews = () =>
 {
     const [reviews, setReviews] = useState([])
 
@@ -21,9 +21,9 @@ const Review = () =>
             <h2 className="fw-bold text-center">
                 <u>Our </u><span className="text-white"><u>Happy</u></span><u> Customers</u>
             </h2>
-            <Carousel>
+            <Row xs={1} md={3} className="g-4">
                 {
-                    reviews.map(review => <Carousel.Item key={review._id}>
+                    reviews.map(review => <Col key={review._id}>
                         <Card className="w-75 text-center mx-auto my-5 shadow">
                             <Card.Header>
                                 <span className="text-muted">Our Product Name</span>
@@ -58,12 +58,12 @@ const Review = () =>
                                 <Card.Text>{review.customerEmail}</Card.Text>
                             </Card.Footer>
                         </Card>
-                    </Carousel.Item>
+                    </Col>
                     )
                 }
-            </Carousel>
+            </Row>
         </div>
     );
 };
 
-export default Review;
+export default Reviews;

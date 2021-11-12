@@ -25,7 +25,7 @@ const ExploreProducts = () =>
                 {
                     (products.length === 0) ?
                         <div className="d-flex justify-content-center align-items-center py-5">
-                            <Spinner animation="border" variant="success" />
+                            <Spinner animation="border" variant="info" />
                         </div> :
                         <Row xs={1} md={3} className="g-4 py-4 py-lg-5">
                             {

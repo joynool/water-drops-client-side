@@ -16,7 +16,7 @@ const Banner = () =>
                     <FaQuoteRight className="text-info" />
                 </h3>
                 <Nav.Link as={Link} to="/explore-product" className="text-center">
-                    <Button variant="dark" className="rounded-pill px-4 py-lg-3">Explore Our Products</Button>
+                    <Button variant="dark" className="rounded-pill px-4 py-lg-3 shadow">Explore Our Products</Button>
                 </Nav.Link>
             </div>
         </div>
