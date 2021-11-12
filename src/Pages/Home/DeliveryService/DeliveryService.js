@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import delivery from './../../../images/delivery.png';
 
 const DeliveryService = () =>
@@ -20,7 +21,7 @@ const DeliveryService = () =>
                     <li>8:00 – 22:00</li>
                 </ul>
                 <div className="text-center my-4">
-                    <Button variant="dark" className="rounded-pill px-4 py-3 shadow">Make Your Order</Button>
+                    <Button as={Link} to="/explore-product" variant="dark" className="rounded-pill px-4 py-3 shadow">Make Your Order</Button>
                 </div>
             </div>
         </div>

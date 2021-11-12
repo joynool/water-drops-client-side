@@ -9,6 +9,9 @@ import Home from './Pages/Home/Home/Home';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
+import ExploreProducts from './Pages/ExploreProducts/ExploreProducts';
+import Orders from './Pages/Orders/Orders';
+import ReviewItem from './Pages/Home/Reviews/ReviewItem/ReviewItem';
 
 /*------------------------------------------------------------------
     Use context API to pass data and implement React router DOM
@@ -25,6 +28,15 @@ function App ()
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/explore-product">
+            <ExploreProducts />
+          </Route>
+          <Route path="/review-item/:productName">
+            <ReviewItem />
+          </Route>
+          <Route path="/order/:id">
+            <Orders />
           </Route>
           <Route>
             <NotFound />

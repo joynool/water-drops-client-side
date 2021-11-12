@@ -1,10 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Card, Col, Row, Spinner, Button, Container, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const HomeProducts = () =>
 {
+    const [homeProducts, setHomeProducts] = useState([])
+
+    const size = 6;
+    useEffect(() =>
+    {
+        fetch(`http://localhost:5000/products?size=${size}`)
+            .then(res => res.json())
+            .then(data =>
+            {
+                setHomeProducts(data)
+            });
+    }, []);
+
     return (
-        <div>
-            <h2>This is Home products 6 items</h2>
+        <div id="products" className="bg-info mb-3 mb-lg-3">
+            <Container>
+                <h2 className="fw-bold text-center pt-5">
+                    <u>Our </u><span className="text-white"><u>Top</u></span><u> Products</u>
+                </h2>
+                {
+                    (homeProducts.length === 0) ?
+                        <div className="d-flex justify-content-center align-items-center py-5">
+                            <Spinner animation="border" variant="success" />
+                        </div> :
+                        <Row xs={1} md={3} className="g-4 py-4 py-lg-5">
+                            {
+                                homeProducts.map(product => <Col key={product._id}>
+                                    <Card className="shadow p-2">
+                                        <Card.Img variant="top" src={product.img} alt="Service Image" className="img-thumbnail" />
+                                        <Card.Body>
+                                            <Card.Title className="fw-light fs-3">{product.name}</Card.Title>
+                                            <Card.Text className="text-muted">
+                                                {product.description}
+                                            </Card.Text>
+                                        </Card.Body>
+                                        <Card.Body className="d-flex justify-content-between">
+                                            <Card.Text>
+                                                Price: $ {product.price}
+                                            </Card.Text>
+                                            <Button as={Link} to={`/review-item/${product.name}`} variant="dark">Review Item</Button>
+                                            <Button as={Link} to={`/order/${product._id}`} variant="outline-dark">Order Now</Button>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                                )
+                            }
+                        </Row>
+                }
+                <Nav.Link as={HashLink} to="/explore-product#explore-product" className="text-center pb-4">
+                    <Button variant="dark" className="rounded-pill px-4 py-lg-3">Explore Our Products</Button>
+                </Nav.Link>
+            </Container>
         </div>
     );
 };

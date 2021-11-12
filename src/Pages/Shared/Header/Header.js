@@ -30,15 +30,15 @@ const Header = () =>
                             <Nav.Link as={HashLink} to="/home#home">
                                 Home
                             </Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#service">
+                            <Nav.Link as={HashLink} to="/home#products">
                                 Products
                             </Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#things-to-do">
+                            <Nav.Link as={HashLink} to="/home#reviews">
                                 Customer Reviews
                             </Nav.Link>
                             {
                                 user.email ? <NavDropdown title={user.displayName} id="collasible-nav-dropdown" className=" text-center">
-                                    <NavDropdown.Item as={Link} to="/my-order">My Dashboard</NavDropdown.Item>
+                                    <NavDropdown.Item as={Link} to="/my-dashboard">My Dashboard</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <div className="text-center">
                                         <Button variant="btn btn-outline-dark" className="ms-auto">Logout</Button>

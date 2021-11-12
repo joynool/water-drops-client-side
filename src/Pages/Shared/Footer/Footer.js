@@ -24,13 +24,13 @@ const Footer = () =>
                         <Nav.Link as={HashLink} to="/home#home" className="m-0 p-0">
                             Home
                         </Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#service" className="m-0 p-0">
+                        <Nav.Link as={HashLink} to="/home#products" className="m-0 p-0">
                             Products
                         </Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#things-to-do" className="m-0 p-0">
+                        <Nav.Link as={HashLink} to="/home#reviews" className="m-0 p-0">
                             Customer Reviews
                         </Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#things-to-do" className="m-0 p-0">
+                        <Nav.Link as={HashLink} to="/home" className="m-0 p-0">
                             FAQ
                         </Nav.Link>
                     </Nav>

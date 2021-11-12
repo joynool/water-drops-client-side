@@ -2,17 +2,17 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import DeliveryService from '../DeliveryService/DeliveryService';
 import HomeProducts from '../HomeProducts/HomeProducts';
-import Reviews from '../Reviews/Reviews';
+import Review from '../Reviews/Review/Review';
 
 const Home = () =>
 {
     return (
-        <>
+        <div id="home">
             <Banner />
             <HomeProducts />
             <DeliveryService />
-            <Reviews />
-        </>
+            <Review />
+        </div>
     );
 };
 
