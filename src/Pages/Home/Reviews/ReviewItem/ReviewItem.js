@@ -1,12 +1,10 @@
 import React from 'react';
-import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import useAuth from '../../../../hooks/useAuth';
 
 const ReviewItem = () =>
 {
-    const { productName } = useParams();
     const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
 
@@ -37,7 +35,7 @@ const ReviewItem = () =>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group className="mb-3">
                         <Form.Label>Product Name</Form.Label>
-                        <Form.Control {...register("productName")} defaultValue={productName} readOnly />
+                        <Form.Control {...register("productName")} defaultValue="Water Drops all products" readOnly />
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <Form.Label>Share Your Review</Form.Label>

@@ -5,7 +5,7 @@ import { BsTelephone, BsEnvelope } from 'react-icons/bs';
 import { BiSupport } from "react-icons/bi";
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
-import { AiOutlineLogout } from "react-icons/ai";
+import { AiOutlineDashboard, AiOutlineLogout } from "react-icons/ai";
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () =>
@@ -39,12 +39,10 @@ const Header = () =>
                                 Customer Reviews
                             </Nav.Link>
                             {
-                                user.email ? <NavDropdown title={user.displayName} id="collasible-nav-dropdown" className=" text-center">
-                                    <NavDropdown.Item as={Link} to="/dashboard">Dashboard</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item as={Link} to="/my-order">My Order</NavDropdown.Item>
-                                    <NavDropdown.Item as={Link} to="/payment">Payment</NavDropdown.Item>
-                                    <NavDropdown.Item as={HashLink} to="/home#reviews">Review</NavDropdown.Item>
+                                user.email ? <NavDropdown title={user.displayName} id="collasible-nav-dropdown">
+                                    <NavDropdown.Item className="my-3 fs-5 d-flex justify-content-center align-items-center" as={Link} to="/dashboard">
+                                        <AiOutlineDashboard />&nbsp;Dashboard
+                                    </NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <div className="text-center">
                                         <Button onClick={logout} variant="outline-dark" className="ms-auto">

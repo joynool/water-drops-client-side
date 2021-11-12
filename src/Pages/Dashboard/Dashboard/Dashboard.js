@@ -3,6 +3,7 @@ import { Tab, Row, Col, Nav, Fade, Button } from 'react-bootstrap';
 import { AiOutlineDashboard, AiOutlineLogout } from "react-icons/ai";
 import useAuth from '../../../hooks/useAuth';
 import ReviewItem from '../../Home/Reviews/ReviewItem/ReviewItem';
+import Reviews from '../../Home/Reviews/Reviews/Reviews';
 import MyOrder from '../MyOrder/MyOrder';
 
 const Dashboard = () =>
@@ -30,6 +31,15 @@ const Dashboard = () =>
                             <Nav.Item>
                                 <Nav.Link className="btn mb-3" eventKey="fourth">Make Admin</Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="btn mb-3" eventKey="fifth">Payment</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="btn mb-3" eventKey="sixth">My Orders</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="btn mb-3" eventKey="seventh">Share Your Review</Nav.Link>
+                            </Nav.Item>
                         </Nav>
                         <Nav className="justify-content-center my-3">
                             <Button onClick={logout} variant="outline-dark" className="d-flex justify-content-center align-items-center">
@@ -49,7 +59,16 @@ const Dashboard = () =>
                                 <h1>Hi</h1>
                             </Tab.Pane>
                             <Tab.Pane transition={Fade} eventKey="fourth">
-                                <h1>Bye Bye</h1>
+                                <Reviews />
+                            </Tab.Pane>
+                            <Tab.Pane transition={Fade} eventKey="fifth">
+                                <Reviews />
+                            </Tab.Pane>
+                            <Tab.Pane transition={Fade} eventKey="sixth">
+                                <Reviews />
+                            </Tab.Pane>
+                            <Tab.Pane transition={Fade} eventKey="seventh">
+                                <ReviewItem />
                             </Tab.Pane>
                         </Tab.Content>
                     </Col>

@@ -26,7 +26,6 @@ const HomeReviews = () =>
                     reviews.map(review => <Carousel.Item key={review._id}>
                         <Card className="w-75 text-center mx-auto my-5 shadow">
                             <Card.Header>
-                                <span className="text-muted">Our Product Name</span>
                                 <Card.Title>
                                     {review.productName}
                                 </Card.Title>

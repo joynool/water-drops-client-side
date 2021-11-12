@@ -46,7 +46,7 @@ function App ()
             <Route path="/login">
               <Login />
             </Route>
-            <PrivateRoute path="/review-item/:productName">
+            <PrivateRoute path="/review-item">
               <ReviewItem />
             </PrivateRoute>
             <PrivateRoute path="/order/:id">
