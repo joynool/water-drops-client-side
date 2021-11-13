@@ -7,7 +7,7 @@ const ManageAllProducts = () =>
 
     useEffect(() =>
     {
-        fetch('http://localhost:5000/products')
+        fetch('https://guarded-gorge-39504.herokuapp.com/products')
             .then(res => res.json())
             .then(data =>
             {
@@ -19,7 +19,7 @@ const ManageAllProducts = () =>
     {
         const proceed = window.confirm('Are you sure, you want to DELETE the product?');
         if (proceed) {
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://guarded-gorge-39504.herokuapp.com/products/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

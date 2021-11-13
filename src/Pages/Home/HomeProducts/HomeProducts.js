@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row, Spinner, Button, Container, Nav } from 'react-bootstrap';
+import { Card, Col, Row, Spinner, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 
 const HomeProducts = () =>
 {
@@ -10,7 +9,7 @@ const HomeProducts = () =>
     const size = 6;
     useEffect(() =>
     {
-        fetch(`http://localhost:5000/products?size=${size}`)
+        fetch(`https://guarded-gorge-39504.herokuapp.com/products?size=${size}`)
             .then(res => res.json())
             .then(data =>
             {

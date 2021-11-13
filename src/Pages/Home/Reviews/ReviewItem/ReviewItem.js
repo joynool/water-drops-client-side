@@ -11,7 +11,7 @@ const ReviewItem = () =>
     //Create new service to mongodb
     const onSubmit = data =>
     {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://guarded-gorge-39504.herokuapp.com/reviews', {
             method: 'post',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -13,7 +13,7 @@ const MyOrder = () =>
 
     useEffect(() =>
     {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${user.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
             .catch(error => console.log(error));
@@ -24,7 +24,7 @@ const MyOrder = () =>
     {
         const proceed = window.confirm('Are you sure, you want to DELETE the order?');
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -8,7 +8,7 @@ const ExploreProducts = () =>
 
     useEffect(() =>
     {
-        fetch('http://localhost:5000/products')
+        fetch('https://guarded-gorge-39504.herokuapp.com/products')
             .then(res => res.json())
             .then(data =>
             {

@@ -8,7 +8,7 @@ const AllOrders = () =>
     //Load all order data from mongodb
     useEffect(() =>
     {
-        fetch('http://localhost:5000/orders')
+        fetch('https://guarded-gorge-39504.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
             .catch(error => console.log(error));
@@ -18,7 +18,7 @@ const AllOrders = () =>
     const handleUpdateStatus = id =>
     {
         const statusUpdate = { orderStatus: 'shipped' };
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(statusUpdate)
@@ -37,7 +37,7 @@ const AllOrders = () =>
     {
         const proceed = window.confirm('Are you sure, you want to DELETE the order?');
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

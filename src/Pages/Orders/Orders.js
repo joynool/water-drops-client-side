@@ -17,7 +17,7 @@ const Orders = () =>
     //Load book now service from mongodb
     useEffect(() =>
     {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://guarded-gorge-39504.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [id]);
@@ -45,7 +45,7 @@ const Orders = () =>
         data.orderStatus = 'pending';
         data.orderInfo = { id: id, name: orders.name, quantity: quantity, totalPrice: totalPrice };
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://guarded-gorge-39504.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

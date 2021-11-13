@@ -8,7 +8,7 @@ const HomeReviews = () =>
 
     useEffect(() =>
     {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://guarded-gorge-39504.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data =>
             {

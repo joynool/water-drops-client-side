@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Row, Col, Nav, Fade, Button } from 'react-bootstrap';
+import { Row, Col, Nav, Button } from 'react-bootstrap';
 import
 {
     Switch,

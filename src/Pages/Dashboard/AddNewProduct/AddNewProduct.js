@@ -9,7 +9,7 @@ const AddNewProduct = () =>
     //Create new service to mongodb
     const onSubmit = data =>
     {
-        fetch('http://localhost:5000/products', {
+        fetch('https://guarded-gorge-39504.herokuapp.com/products', {
             method: 'post',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
