@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Form, Button, Alert, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Alert, Container } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 /*-------------------------------------------------------
