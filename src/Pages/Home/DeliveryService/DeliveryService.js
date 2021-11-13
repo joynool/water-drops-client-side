@@ -3,6 +3,9 @@ import { Button, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import delivery from './../../../images/delivery.png';
 
+/*-----------------------------------------------------
+        Implement delivery information for home page
+-------------------------------------------------------*/
 const DeliveryService = () =>
 {
     return (

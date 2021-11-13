@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table, CloseButton } from 'react-bootstrap';
 
+/*-----------------------------------------------------
+Implement Load All product with delete functionality
+-------------------------------------------------------*/
 const ManageAllProducts = () =>
 {
     const [allProduct, setAllProduct] = useState([]);

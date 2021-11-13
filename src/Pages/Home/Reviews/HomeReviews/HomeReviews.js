@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Card, Carousel } from 'react-bootstrap';
 import Rating from 'react-rating';
 
+/*---------------------------------------------------------
+Implement HomeReviews to show customer review for home page
+-----------------------------------------------------------*/
 const HomeReviews = () =>
 {
-    const [reviews, setReviews] = useState([])
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() =>
     {
@@ -12,7 +15,7 @@ const HomeReviews = () =>
             .then(res => res.json())
             .then(data =>
             {
-                setReviews(data)
+                setReviews(data);
             });
     }, []);
 

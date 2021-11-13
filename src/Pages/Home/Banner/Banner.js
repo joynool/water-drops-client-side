@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import banner from './../../../images/banner.jpg';
 
+/*-----------------------------------------------------
+            Implement top banner for home page
+-------------------------------------------------------*/
 const Banner = () =>
 {
     return (
@@ -24,9 +27,3 @@ const Banner = () =>
 };
 
 export default Banner;
-
-/* <div style={bg} className="img-fluid">
-            <h1 style={{ textAlign: 'center', fontSize: '2.7rem', fontWeight: 'bold', paddingTop: 450 }}>
-                WE MAKE REUSABLE WATER BOTTLES FOR YOU AND YOUR FAMILY
-            </h1>
-        </div> */

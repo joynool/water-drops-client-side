@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Row, Spinner, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+/*-----------------------------------------------------
+            Implement 6 products for home page
+-------------------------------------------------------*/
 const HomeProducts = () =>
 {
-    const [homeProducts, setHomeProducts] = useState([])
+    const [homeProducts, setHomeProducts] = useState([]);
 
     const size = 6;
     useEffect(() =>
@@ -13,7 +16,7 @@ const HomeProducts = () =>
             .then(res => res.json())
             .then(data =>
             {
-                setHomeProducts(data)
+                setHomeProducts(data);
             });
     }, []);
 

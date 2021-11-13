@@ -2,11 +2,14 @@ import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 
+/*---------------------------------------------------------
+Implement add new product to database using react hook form
+-----------------------------------------------------------*/
 const AddNewProduct = () =>
 {
     const { register, handleSubmit, reset } = useForm();
 
-    //Create new service to mongodb
+    //Create new service to database
     const onSubmit = data =>
     {
         fetch('https://guarded-gorge-39504.herokuapp.com/products', {

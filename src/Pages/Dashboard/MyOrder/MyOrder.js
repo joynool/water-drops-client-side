@@ -3,14 +3,14 @@ import { Badge, CloseButton, Container, Table } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 /*------------------------------------------------------------------
-            My Order panel for filter data using user email
+        Implement My Order for filter data using user email
 --------------------------------------------------------------------*/
 const MyOrder = () =>
 {
     const { user } = useAuth();
-
     const [myOrders, setMyOrders] = useState([]);
 
+    //load order data filtering using email
     useEffect(() =>
     {
         fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${user.email}`)

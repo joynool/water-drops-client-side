@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Authentication/Firebase/firebase.init";
 import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
 
+/*------------------------------------------------------------------------
+Implement custom hook as useFirebase() to pass all firebase functionality
+--------------------------------------------------------------------------*/
 initializeAuthentication();
 
 const useFirebase = () =>
@@ -65,6 +68,7 @@ const useFirebase = () =>
         return () => unsubscribe;
     }, [auth]);
 
+    // filter admin user from database
     useEffect(() =>
     {
         fetch(`https://guarded-gorge-39504.herokuapp.com/users/${user.email}`)
@@ -79,6 +83,7 @@ const useFirebase = () =>
             .then(() => { setIsLoading(false) });
     };
 
+    // Save user to database for admin power
     const saveUser = (email, displayName) =>
     {
         const user = { email, displayName };

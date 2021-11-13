@@ -3,12 +3,15 @@ import { useForm } from "react-hook-form";
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import useAuth from '../../../../hooks/useAuth';
 
+/*-----------------------------------------------------
+    Implement add new review using react hook form
+-------------------------------------------------------*/
 const ReviewItem = () =>
 {
     const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
 
-    //Create new service to mongodb
+    //onSubmit handler to pass review to database
     const onSubmit = data =>
     {
         fetch('https://guarded-gorge-39504.herokuapp.com/reviews', {

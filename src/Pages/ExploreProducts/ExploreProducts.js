@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row, Spinner, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+/*-----------------------------------------------------
+        Implement Load all products from database
+-------------------------------------------------------*/
 const ExploreProducts = () =>
 {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
 
     useEffect(() =>
     {

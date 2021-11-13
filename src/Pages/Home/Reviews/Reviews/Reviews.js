@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import Rating from 'react-rating';
 
+/*-----------------------------------------------------
+            Load all reviews from database
+-------------------------------------------------------*/
 const Reviews = () =>
 {
-    const [reviews, setReviews] = useState([])
+    const [reviews, setReviews] = useState([]);
 
     useEffect(() =>
     {
@@ -12,7 +15,7 @@ const Reviews = () =>
             .then(res => res.json())
             .then(data =>
             {
-                setReviews(data)
+                setReviews(data);
             });
     }, []);
 

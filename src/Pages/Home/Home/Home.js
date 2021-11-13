@@ -4,6 +4,9 @@ import DeliveryService from '../DeliveryService/DeliveryService';
 import HomeProducts from '../HomeProducts/HomeProducts';
 import HomeReviews from '../Reviews/HomeReviews/HomeReviews';
 
+/*-----------------------------------------------------
+                    Implement home page
+-------------------------------------------------------*/
 const Home = () =>
 {
     return (

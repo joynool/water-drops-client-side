@@ -18,6 +18,9 @@ import MyOrder from '../MyOrder/MyOrder';
 import Payment from '../Payment/Payment';
 import AdminRoute from '../../Authentication/AdminRoute/AdminRoute';
 
+/*------------------------------------------------------
+Implement Dashboard for login user and also filter admin
+--------------------------------------------------------*/
 const Dashboard = () =>
 {
     const { admin, logout } = useAuth();

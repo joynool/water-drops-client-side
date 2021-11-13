@@ -6,6 +6,9 @@ import { BsGeoAlt, BsTelephone, BsEnvelope } from 'react-icons/bs';
 import logo from './../../../images/logo.png';
 import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from "react-icons/fa";
 
+/*-----------------------------------------------------
+            Implement footer with simple design
+-------------------------------------------------------*/
 const Footer = () =>
 {
     return (

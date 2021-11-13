@@ -5,6 +5,9 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
+/*-----------------------------------------------------
+            Implement Order process functionality
+-------------------------------------------------------*/
 const Orders = () =>
 {
     const { id } = useParams();
@@ -14,7 +17,7 @@ const Orders = () =>
     const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
 
-    //Load book now service from mongodb
+    // Load selected product from database
     useEffect(() =>
     {
         fetch(`https://guarded-gorge-39504.herokuapp.com/products/${id}`)
@@ -22,6 +25,7 @@ const Orders = () =>
             .then(data => setOrders(data));
     }, [id]);
 
+    // quantity handler for UI
     const handleQuantity = state =>
     {
         if (state === true) {
@@ -34,12 +38,13 @@ const Orders = () =>
         };
     };
 
+    // Update total price
     useEffect(() =>
     {
         setTotalPrice(Math.ceil(orders.price * quantity))
-    }, [quantity, orders.price])
+    }, [quantity, orders.price]);
 
-    //Store shipping info to mongodb
+    // onSubmit handler to pass order data to database with order status
     const onSubmit = data =>
     {
         data.orderStatus = 'pending';
@@ -59,7 +64,7 @@ const Orders = () =>
                     alert('Order confirmed! Your products will deliver very soon...');
                     reset();
                 }
-            })
+            });
     };
 
     return (

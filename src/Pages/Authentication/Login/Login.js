@@ -5,6 +5,9 @@ import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 import login from './../../../images/login.png';
 
+/*-----------------------------------------------------
+Login and Register toggle with firebase functionality
+-------------------------------------------------------*/
 const Login = () =>
 {
     const [isLogin, setIsLogin] = useState(false);
@@ -105,9 +108,7 @@ const Login = () =>
                             {authError && <Alert variant="danger">{authError}</Alert>}
                         </Form>
                 }
-
             </Container>
-
         </div>
     );
 };

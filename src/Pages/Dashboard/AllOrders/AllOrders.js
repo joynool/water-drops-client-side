@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Badge, Button, CloseButton, Container, Table } from 'react-bootstrap';
 
+/*------------------------------------------------------------
+Implement All Orders with delete and status update to database
+--------------------------------------------------------------*/
 const AllOrders = () =>
 {
     const [orders, setOrders] = useState([]);
 
-    //Load all order data from mongodb
+    //Load all order data from database
     useEffect(() =>
     {
         fetch('https://guarded-gorge-39504.herokuapp.com/orders')
@@ -14,7 +17,7 @@ const AllOrders = () =>
             .catch(error => console.log(error));
     }, []);
 
-    //Pending/Approved update status handler
+    //Pending/shipped update status handler
     const handleUpdateStatus = id =>
     {
         const statusUpdate = { orderStatus: 'shipped' };

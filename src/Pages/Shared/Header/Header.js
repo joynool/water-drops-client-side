@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import { AiOutlineDashboard, AiOutlineLogout } from "react-icons/ai";
 import useAuth from '../../../hooks/useAuth';
 
+/*-----------------------------------------------------
+        Implement header with simple navigation
+-------------------------------------------------------*/
 const Header = () =>
 {
     const { user, logout } = useAuth();
