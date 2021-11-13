@@ -41,10 +41,9 @@ const HomeProducts = () =>
                                             </Card.Text>
                                         </Card.Body>
                                         <Card.Body className="d-flex justify-content-between">
-                                            <Card.Text>
+                                            <Card.Text className="fw-bold">
                                                 Price: $ {product.price}
                                             </Card.Text>
-                                            <Button as={Link} to={`/review-item/${product.name}`} variant="dark">Review Item</Button>
                                             <Button as={Link} to={`/order/${product._id}`} variant="outline-dark">Order Now</Button>
                                         </Card.Body>
                                     </Card>

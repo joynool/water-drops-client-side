@@ -1,26 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { Badge, CloseButton, Container, Table } from 'react-bootstrap';
-import useAuth from '../../../hooks/useAuth';
+import { Badge, Button, CloseButton, Container, Table } from 'react-bootstrap';
 
-/*------------------------------------------------------------------
-            My Order panel for filter data using user email
---------------------------------------------------------------------*/
-const MyOrder = () =>
+const AllOrders = () =>
 {
-    const { user } = useAuth();
+    const [orders, setOrders] = useState([]);
 
-    const [myOrders, setMyOrders] = useState([]);
-
+    //Load all order data from mongodb
     useEffect(() =>
     {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch('http://localhost:5000/orders')
             .then(res => res.json())
-            .then(data => setMyOrders(data))
+            .then(data => setOrders(data))
             .catch(error => console.log(error));
-    }, [user.email]);
+    }, []);
 
-    //Delete order data handler
-    const handleMyOrderDelete = id =>
+    //Pending/Approved update status handler
+    const handleUpdateStatus = id =>
+    {
+        const statusUpdate = { orderStatus: 'shipped' };
+        fetch(`http://localhost:5000/orders/${id}`, {
+            method: 'PUT',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(statusUpdate)
+        })
+            .then(res => res.json())
+            .then(data =>
+            {
+                if (data.modifiedCount > 0) {
+                    alert('Your Order shipped successfully to deliver process!');
+                };
+            });
+    };
+
+    //Order delete handler
+    const handleDelete = id =>
     {
         const proceed = window.confirm('Are you sure, you want to DELETE the order?');
         if (proceed) {
@@ -32,20 +45,19 @@ const MyOrder = () =>
                 {
                     if (data.deletedCount > 0) {
                         alert('Successfully Deleted the Order');
-                        const restOrders = myOrders.filter(order => order._id !== id);
-                        setMyOrders(restOrders);
-                    };
-                });
-        };
-    };
+                        const restOrders = orders.filter(order => order._id !== id);
+                        setOrders(restOrders);
+                    }
+                })
+        }
+    }
 
-    //All order data display panel using table
     return (
         <Container className="bg-info rounded shadow my-5">
             <h2 className="fw-bold text-center pt-3">
-                <u>My </u><span className="text-white"><u>Order</u></span>
+                <u>All </u><span className="text-white"><u>Orders</u></span>
             </h2>
-            <p className="fw-light fs-4 mt-3 text-center">Total Order: {myOrders.length} Items</p>
+            <p className="fw-light fs-4 mt-3 text-center">Total Order: {orders.length} Items</p>
             <Table responsive>
                 <thead>
                     <tr>
@@ -55,13 +67,13 @@ const MyOrder = () =>
                         <th>Total Price</th>
                         <th>Shipping Name</th>
                         <th>Shipping Email</th>
-                        <th>Order Status</th>
-                        <th>Order Cancel</th>
+                        <th>Status</th>
+                        <th>Management</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        myOrders.map(order => <tr key={order._id} className="bg-light">
+                        orders.map(order => <tr key={order._id} className="bg-light">
                             <td>{order.orderInfo.id}</td>
                             <td>{order.orderInfo.name}</td>
                             <td className="text-center">{order.orderInfo.quantity}</td>
@@ -78,8 +90,11 @@ const MyOrder = () =>
                                 }
 
                             </td>
-                            <td className="text-center">
-                                <CloseButton onClick={() => handleMyOrderDelete(order._id)} className="fs-5 bg-danger rounded-circle ms-2" title="Delete Order" />
+                            <td className="d-flex justify-content-around align-items-center">
+                                <Button onClick={() => handleUpdateStatus(order._id)} variant="outline-dark" size="sm">
+                                    Shipped
+                                </Button>
+                                <CloseButton onClick={() => handleDelete(order._id)} className="fs-5 bg-danger rounded-circle ms-2" title="Delete Order" />
                             </td>
                         </tr>
                         )
@@ -90,4 +105,4 @@ const MyOrder = () =>
     );
 };
 
-export default MyOrder;
+export default AllOrders;

@@ -35,7 +35,7 @@ const ReviewItem = () =>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Form.Group className="mb-3">
                         <Form.Label>Product Name</Form.Label>
-                        <Form.Control {...register("productName")} defaultValue="Water Drops all products" readOnly />
+                        <Form.Control {...register("productName")} defaultValue="All Products of Water Drops" readOnly />
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <Form.Label>Share Your Review</Form.Label>

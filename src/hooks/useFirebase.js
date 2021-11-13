@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Authentication/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, updateProfile, getIdToken } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword, onAuthStateChanged, updateProfile } from "firebase/auth";
 
 initializeAuthentication();
 
@@ -9,7 +9,8 @@ const useFirebase = () =>
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-
+    const [admin, setAdmin] = useState(false);
+    console.log(admin)
     const auth = getAuth();
 
     const registerUser = (email, password, name, history) =>
@@ -64,6 +65,13 @@ const useFirebase = () =>
         return () => unsubscribe;
     }, [auth]);
 
+    useEffect(() =>
+    {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin));
+    }, [user.email]);
+
     const logout = () =>
     {
         setIsLoading(true);
@@ -84,7 +92,7 @@ const useFirebase = () =>
             .then()
     };
 
-    return { user, isLoading, registerUser, loginUser, logout, authError, setAuthError };
+    return { user, admin, isLoading, registerUser, loginUser, logout, authError, setAuthError };
 };
 
 export default useFirebase;

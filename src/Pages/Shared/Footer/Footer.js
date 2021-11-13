@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { BsGeoAlt, BsTelephone, BsEnvelope } from 'react-icons/bs';
 import logo from './../../../images/logo.png';
 import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from "react-icons/fa";
 
@@ -37,9 +38,9 @@ const Footer = () =>
                     <Nav className="flex-column align-items-center mt-3">
                         <h4 className="text-white">Contact Us</h4>
                         <div className="fs-6 lh-1 text-white mt-3">
-                            <p>92/A, Dhaka - 1000, Bangladesh</p>
-                            <p>Email: contact@waterdrops.com</p>
-                            <p>Phone: +880123456, +880654321</p>
+                            <p><BsGeoAlt />&nbsp;&nbsp;92/A, Dhaka - 1000, Bangladesh</p>
+                            <p><BsEnvelope />&nbsp;&nbsp;Email: contact@waterdrops.com</p>
+                            <p><BsTelephone />&nbsp;&nbsp;Phone: +880123456, +880654321</p>
                         </div>
                     </Nav>
                     <Nav className="flex-column align-items-center my-3">
