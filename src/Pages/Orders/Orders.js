@@ -69,33 +69,33 @@ const Orders = () =>
 
     return (
         <Container className="bg-info shadow rounded my-5 p-5">
-            <div className="d-lg-flex justify-content-center align-items-center text-center">
+            <h2 className="fw-bold text-center py-3">
+                <u>Your </u><span className="text-white"><u>Shipping</u></span><u> Information</u>
+            </h2>
+            <div className="d-lg-flex justify-content-lg-center align-items-lg-center pb-4">
                 <div className="d-lg-flex bg-light border rounded shadow p-3">
-                    <div>
+                    <div className="mx-3">
                         <Image src={orders.img} width="200px" height="200px" alt="Order Image" fluid thumbnail />
                     </div>
-                    <div className="ms-3">
-                        <h2 className="fw-bold fs-5 text-info overflow-hidden">Order Id: {orders._id}</h2>
-                        <h3 className="fw-light fs-3">Name: {orders.name}</h3>
-                        <h3 className="fw-light fs-3">Price: $ {orders.price}</h3>
+                    <div className="text-center ms-lg-2">
+                        <h2 className="fw-bold fs-6 text-info overflow-hidden">Order Id: {orders._id}</h2>
+                        <h3 className="fw-light fs-4">Name: {orders.name}</h3>
+                        <h3 className="fw-light fs-4">Price: $ {orders.price}</h3>
                         <div className="d-flex justify-content-center align-items-center">
-                            <h3 className="fw-light fs-3">Quantity:&nbsp;</h3>
-                            <ButtonGroup size="sm" className="w-25">
+                            <h3 className="fw-light fs-4">Quantity:&nbsp;</h3>
+                            <ButtonGroup size="sm" style={{ width: '100px' }}>
                                 <Button variant="outline-dark" onClick={() => handleQuantity(false)}><i className="fa fa-minus-circle" aria-hidden="true"></i></Button>
                                 <Form.Control size="sm" type="text" value={quantity} readOnly />
                                 <Button variant="outline-dark" onClick={() => handleQuantity(true)}><i className="fa fa-plus-circle" aria-hidden="true"></i></Button>
                             </ButtonGroup>
                         </div>
                         <h3 className="fw-light fs-3">
-                            Total Round Price: $ {totalPrice}
+                            Total Price: $ {totalPrice}
                         </h3>
                     </div>
                 </div>
             </div>
             <Form onSubmit={handleSubmit(onSubmit)}>
-                <h2 className="fw-bold text-center py-4">
-                    <u>Your </u><span className="text-white"><u>Shipping</u></span><u> Information</u>
-                </h2>
                 <Row className="mb-3">
                     <Form.Group as={Col}>
                         <Form.Label>Your Name</Form.Label>

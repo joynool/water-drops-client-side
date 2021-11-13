@@ -70,7 +70,7 @@ const Dashboard = () =>
                         <Switch>
                             <Route exact path={path}>
                                 <h1 className="bg-info d-flex justify-content-center rounded shadow mt-5 p-5">
-                                    <u>Welcome to&nbsp;</u><span className="text-white fw-bold"><u>Dashboard Panel</u></span>
+                                    <u>Welcome to&nbsp;<span className="text-white fw-bold">Dashboard Panel</span></u>
                                 </h1>
                             </Route>
                             <AdminRoute path={`${path}/all-orders`}>

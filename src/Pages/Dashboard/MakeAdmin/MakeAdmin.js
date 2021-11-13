@@ -37,14 +37,10 @@ const MakeAdmin = () =>
             <h2 className="fw-bold text-center pt-3">
                 <u>Make </u><span className="text-white"><u>Admin</u></span><u> Panel</u>
             </h2>
-            <Form onSubmit={handleSubmit(onSubmit)} className="mx-5 px-5">
-                <Form.Group as={Row} className="my-4">
-                    <Form.Label column sm="2">
-                        Your Email
-                    </Form.Label>
-                    <Col sm="10">
-                        <Form.Control {...register("email")} type="email" defaultValue={user.email} required />
-                    </Col>
+            <Form onSubmit={handleSubmit(onSubmit)} className="mx-lg-5 px-lg-5">
+                <Form.Group className="mb-3">
+                    <Form.Label>User Email</Form.Label>
+                    <Form.Control {...register("email")} type="email" defaultValue={user.email} required />
                 </Form.Group>
                 <Form.Group className="text-center">
                     <Button variant="dark" type="submit" className="shadow mb-4">
