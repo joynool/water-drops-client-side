@@ -13,7 +13,7 @@ const useFirebase = () =>
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false);
-    console.log(admin)
+
     const auth = getAuth();
 
     const registerUser = (email, password, name, history) =>
