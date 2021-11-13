@@ -8,9 +8,9 @@ Implement AdminRoute like private route for filter accessability
 ----------------------------------------------------------------*/
 const AdminRoute = ({ children, ...rest }) =>
 {
-    const { user, admin, isLoading } = useAuth();
+    const { user, admin } = useAuth();
 
-    if (isLoading) {
+    if (!admin) {
         return (<div className="d-flex justify-content-center align-items-center py-5">
             <Spinner animation="border" variant="info" />
         </div>);
