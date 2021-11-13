@@ -74,7 +74,7 @@ const useFirebase = () =>
         fetch(`https://guarded-gorge-39504.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin));
-    }, [user.email]);
+    }, [user?.email]);
 
     const logout = () =>
     {
