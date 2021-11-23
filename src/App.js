@@ -20,9 +20,9 @@ import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import Reviews from './Pages/Home/Reviews/Reviews/Reviews';
 
-/*------------------------------------------------------------------
-Use context API to pass Firebase data and implement React router DOM
---------------------------------------------------------------------*/
+/*---------------------------------------------------------------------
+  Use context API to pass Firebase data and implement React router DOM
+-----------------------------------------------------------------------*/
 function App ()
 {
   return (
