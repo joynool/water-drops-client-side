@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Badge, CloseButton, Container, Table } from 'react-bootstrap';
+import swal from 'sweetalert';
 import useAuth from '../../../hooks/useAuth';
 
 /*------------------------------------------------------------------
@@ -22,21 +23,31 @@ const MyOrder = () =>
     //Delete order data handler
     const handleMyOrderDelete = id =>
     {
-        const proceed = window.confirm('Are you sure, you want to DELETE the order?');
-        if (proceed) {
-            fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data =>
-                {
-                    if (data.deletedCount > 0) {
-                        alert('Successfully Deleted the Order');
-                        const restOrders = myOrders.filter(order => order._id !== id);
-                        setMyOrders(restOrders);
-                    };
-                });
-        };
+        swal({
+            title: "Are you sure, you want to DELETE the order?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) =>
+            {
+                if (willDelete) {
+                    fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data =>
+                        {
+                            if (data.deletedCount > 0) {
+                                swal("Successfully Deleted the Order!", {
+                                    icon: "success",
+                                });
+                                const restOrders = myOrders.filter(order => order._id !== id);
+                                setMyOrders(restOrders);
+                            };
+                        });
+                };
+            });
     };
 
     //All order data display panel using table

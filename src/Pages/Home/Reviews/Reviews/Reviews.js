@@ -30,7 +30,7 @@ const Reviews = () =>
                         <div className="d-flex justify-content-center align-items-center py-5">
                             <Spinner animation="border" variant="dark" />
                         </div> :
-                        <Row xs={1} md={3} className="g-4">
+                        <Row xs={1} md={4} className="g-3">
                             {
                                 reviews.map(review => <Col key={review._id}>
                                     <Card className="text-center mx-auto shadow">

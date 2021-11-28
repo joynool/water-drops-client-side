@@ -3,6 +3,7 @@ import { Col, Form, Image, Row, Button, Container, ButtonGroup } from 'react-boo
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import useAuth from '../../hooks/useAuth';
 
 /*-----------------------------------------------------
@@ -61,7 +62,7 @@ const Orders = () =>
             .then(result =>
             {
                 if (result.insertedId) {
-                    alert('Order confirmed! Your products will deliver very soon...');
+                    swal("Thank you!", "Order confirmed! Your products will deliver very soon...", "success");
                     reset();
                 }
             });

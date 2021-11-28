@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Badge, Button, CloseButton, Container, Table } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 /*------------------------------------------------------------
 Implement All Orders with delete and status update to database
@@ -7,6 +8,7 @@ Implement All Orders with delete and status update to database
 const AllOrders = () =>
 {
     const [orders, setOrders] = useState([]);
+    const [trigger, setTrigger] = useState(false);
 
     //Load all order data from database
     useEffect(() =>
@@ -15,7 +17,7 @@ const AllOrders = () =>
             .then(res => res.json())
             .then(data => setOrders(data))
             .catch(error => console.log(error));
-    }, []);
+    }, [trigger]);
 
     //Pending/shipped update status handler
     const handleUpdateStatus = id =>
@@ -30,7 +32,8 @@ const AllOrders = () =>
             .then(data =>
             {
                 if (data.modifiedCount > 0) {
-                    alert('Your Order shipped successfully to deliver process!');
+                    swal("Thank you!", "Your Order shipped successfully to the delivery process!", "success");
+                    setTrigger(true);
                 };
             });
     };
@@ -38,21 +41,31 @@ const AllOrders = () =>
     //Order delete handler
     const handleDelete = id =>
     {
-        const proceed = window.confirm('Are you sure, you want to DELETE the order?');
-        if (proceed) {
-            fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data =>
-                {
-                    if (data.deletedCount > 0) {
-                        alert('Successfully Deleted the Order');
-                        const restOrders = orders.filter(order => order._id !== id);
-                        setOrders(restOrders);
-                    }
-                })
-        }
+        swal({
+            title: "Are you sure, you want to DELETE the order?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) =>
+            {
+                if (willDelete) {
+                    fetch(`https://guarded-gorge-39504.herokuapp.com/orders/${id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data =>
+                        {
+                            if (data.deletedCount > 0) {
+                                swal("Successfully Deleted the Order!", {
+                                    icon: "success",
+                                });
+                                const restOrders = orders.filter(order => order._id !== id);
+                                setOrders(restOrders);
+                            }
+                        })
+                }
+            });
     }
 
     return (

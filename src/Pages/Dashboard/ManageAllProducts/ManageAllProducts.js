@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table, CloseButton } from 'react-bootstrap';
+import swal from 'sweetalert';
 
 /*-----------------------------------------------------
 Implement Load All product with delete functionality
@@ -20,21 +21,31 @@ const ManageAllProducts = () =>
 
     const handleDelete = id =>
     {
-        const proceed = window.confirm('Are you sure, you want to DELETE the product?');
-        if (proceed) {
-            fetch(`https://guarded-gorge-39504.herokuapp.com/products/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data =>
-                {
-                    if (data.deletedCount > 0) {
-                        alert('Successfully Deleted the product');
-                        const restProducts = allProduct.filter(product => product._id !== id);
-                        setAllProduct(restProducts);
-                    }
-                })
-        };
+        swal({
+            title: "Are you sure, you want to DELETE the product?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) =>
+            {
+                if (willDelete) {
+                    fetch(`https://guarded-gorge-39504.herokuapp.com/products/${id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data =>
+                        {
+                            if (data.deletedCount > 0) {
+                                swal("Successfully Deleted the product!", {
+                                    icon: "success",
+                                });
+                                const restProducts = allProduct.filter(product => product._id !== id);
+                                setAllProduct(restProducts);
+                            }
+                        });
+                };
+            });
     };
 
     return (

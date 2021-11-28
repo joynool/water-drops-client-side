@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import swal from 'sweetalert';
 
 /*---------------------------------------------------------
 Implement add new product to database using react hook form
@@ -21,7 +22,7 @@ const AddNewProduct = () =>
             .then(result =>
             {
                 if (result.insertedId) {
-                    alert('Successfully Added New Product !');
+                    swal("Thank you!", "Successfully Added New Product!", "success");
                     reset();
                 }
             });

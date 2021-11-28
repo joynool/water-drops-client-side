@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { Col, Form, Row, Button } from 'react-bootstrap';
 import useAuth from '../../../../hooks/useAuth';
+import swal from 'sweetalert';
 
 /*-----------------------------------------------------
     Implement add new review using react hook form
@@ -23,7 +24,7 @@ const ReviewItem = () =>
             .then(result =>
             {
                 if (result.insertedId) {
-                    alert('Thank you for sharing us your valuable review...');
+                    swal("Thank you", "For sharing us your valuable review...", "success");
                     reset();
                 }
             });

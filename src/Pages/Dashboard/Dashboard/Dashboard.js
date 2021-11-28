@@ -8,6 +8,8 @@ import
     useRouteMatch
 } from "react-router-dom";
 import { AiOutlineDashboard, AiOutlineLogout } from "react-icons/ai";
+import { RiDraftFill, RiShoppingBag3Fill, RiSettings5Fill, RiAdminFill, RiSecurePaymentFill } from "react-icons/ri";
+import { FaComments } from "react-icons/fa";
 import useAuth from '../../../hooks/useAuth';
 import ReviewItem from '../../Home/Reviews/ReviewItem/ReviewItem';
 import AddNewProduct from '../AddNewProduct/AddNewProduct';
@@ -28,34 +30,48 @@ const Dashboard = () =>
 
     return (
         <>
-            <Row className="m-0 p-0">
+            <Row className="m-0 p-0 border-top border-bottom">
                 <Col sm={2} className="bg-dark">
                     <Nav as={Link} to={`${url}`} style={{ textDecoration: 'none' }} className="text-light justify-content-center align-items-center border-bottom fs-4 py-3">
                         <AiOutlineDashboard />&nbsp;Dashboard
                     </Nav>
                     {
-                        admin ? <Nav className="flex-column justify-content-center align-items-center my-4">
+                        admin ? <Nav className="flex-column justify-content-center my-4">
                             <Link to={`${url}/all-orders`} className="mb-3">
-                                <Button variant="dark">Manage All Orders</Button>
+                                <Button variant="dark">
+                                    <RiDraftFill className="fs-5 text-light mx-2" />Manage All Orders
+                                </Button>
                             </Link>
                             <Link to={`${url}/add-new-product`} className="mb-3">
-                                <Button variant="dark">Add New Product</Button>
+                                <Button variant="dark">
+                                    <RiShoppingBag3Fill className="fs-5 text-light mx-2" />Add New Product
+                                </Button>
                             </Link>
                             <Link to={`${url}/manage-all-products`} className="mb-3">
-                                <Button variant="dark">Manage All Products</Button>
+                                <Button variant="dark">
+                                    <RiSettings5Fill className="fs-5 text-light mx-2" />Manage All Products
+                                </Button>
                             </Link>
                             <Link to={`${url}/make-admin`} className="mb-3">
-                                <Button variant="dark">Make Admin</Button>
+                                <Button variant="dark">
+                                    <RiAdminFill className="fs-5 text-light mx-2" />Make Admin
+                                </Button>
                             </Link>
-                        </Nav> : <Nav className="flex-column justify-content-center align-items-center my-4">
+                        </Nav> : <Nav className="flex-column justify-content-center my-4">
                             <Link to={`${url}/payment`} className="mb-3">
-                                <Button variant="dark">Payment</Button>
+                                <Button variant="dark">
+                                    <RiSecurePaymentFill className="fs-5 text-light mx-2" />Payment
+                                </Button>
                             </Link>
                             <Link to={`${url}/my-orders`} className="mb-3">
-                                <Button variant="dark">My Orders</Button>
+                                <Button variant="dark">
+                                    <RiDraftFill className="fs-5 text-light mx-2" />My Orders
+                                </Button>
                             </Link>
                             <Link to={`${url}/review-item`} className="mb-3">
-                                <Button variant="dark">Share Your Review</Button>
+                                <Button variant="dark">
+                                    <FaComments className="fs-5 text-light mx-2" />Share Your Review
+                                </Button>
                             </Link>
                         </Nav>
                     }
