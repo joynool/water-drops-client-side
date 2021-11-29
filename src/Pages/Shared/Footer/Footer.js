@@ -49,16 +49,16 @@ const Footer = () =>
                     <Nav className="flex-column align-items-center my-3">
                         <h4 className="text-white">Follow Us</h4>
                         <Nav>
-                            <Nav.Link href="/home" className="text-white fs-1" title="Facebook">
+                            <Nav.Link href="/home" className="text-white fs-3" title="Facebook">
                                 <FaFacebook className="btn-outline-info rounded p-1" />
                             </Nav.Link>
-                            <Nav.Link href="/home" className="text-white fs-1" title="Twitter">
+                            <Nav.Link href="/home" className="text-white fs-3" title="Twitter">
                                 <FaTwitter className="btn-outline-info rounded p-1" />
                             </Nav.Link>
-                            <Nav.Link href="/home" className="text-white fs-1" title="Google">
+                            <Nav.Link href="/home" className="text-white fs-3" title="Google">
                                 <FaGoogle className="btn-outline-info rounded p-1" />
                             </Nav.Link>
-                            <Nav.Link href="/home" className="text-white fs-1" title="Instagram">
+                            <Nav.Link href="/home" className="text-white fs-3" title="Instagram">
                                 <FaInstagram className="btn-outline-info rounded p-1" />
                             </Nav.Link>
                         </Nav>
