@@ -21,10 +21,10 @@ const HomeProducts = () =>
     }, []);
 
     return (
-        <div id="products" className="bg-info mb-3 mb-lg-3">
+        <div id="products" className="bg-light mb-3 mb-lg-3">
             <Container>
                 <h2 className="fw-bold text-center pt-5">
-                    <u>Our </u><span className="text-white"><u>Top</u></span><u> Products</u>
+                    <u>Our </u><span className="text-info"><u>Top</u></span><u> Products</u>
                 </h2>
                 {
                     (homeProducts.length === 0) ?

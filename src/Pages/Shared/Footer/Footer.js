@@ -65,7 +65,7 @@ const Footer = () =>
                     </Nav>
                 </Container>
             </Navbar>
-            <Navbar bg="info" variant="dark">
+            <Navbar bg="light" variant="dark">
                 <Navbar.Text className="text-dark mx-auto">&copy; 2021, Water Drops. All Rights Reserved.</Navbar.Text>
             </Navbar>
         </>

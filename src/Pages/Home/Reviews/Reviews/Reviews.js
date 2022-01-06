@@ -20,9 +20,9 @@ const Reviews = () =>
     }, []);
 
     return (
-        <div id="reviews" className="bg-info py-5">
+        <div id="reviews" className="bg-light py-5">
             <h2 className="fw-bold text-center mb-5">
-                <u>Our </u><span className="text-white"><u>Happy</u></span><u> Customers</u>
+                <u>Our </u><span className="text-info"><u>Happy</u></span><u> Customers</u>
             </h2>
             <Container>
                 {
@@ -34,21 +34,23 @@ const Reviews = () =>
                             {
                                 reviews.map(review => <Col key={review._id}>
                                     <Card className="text-center mx-auto shadow">
-                                        <Card.Header>
-                                            <Card.Title>
+                                        <Card.Header className='bg-info'>
+                                            <Card.Title className='text-white'>
                                                 {review.productName}
                                             </Card.Title>
                                         </Card.Header>
                                         <Card.Body className="py-5">
-                                            <Card.Text className="fs-3 fw-light">
-                                                <span className="text-muted">
-                                                    <u>Customer Feedback</u>
+                                            <Card.Text className="fw-light">
+                                                <span className="fs-3 text-muted border border-1 rounded-pill px-2 shadow-sm">
+                                                    Customer Feedback
                                                 </span>
                                                 <br />
-                                                {review.feedback}
+                                                <span className='fs-5'>
+                                                    {review.feedback}
+                                                </span>
                                             </Card.Text>
                                             <Card.Text style={{ color: "goldenrod", fontSize: "1.2rem" }} className="bg-white rounded">
-                                                <span className="text-muted">Customer Rating: </span>
+                                                <span className="text-muted">Rating: </span>
                                                 <Rating
                                                     initialRating={review.rating}
                                                     emptySymbol="far fa-star"

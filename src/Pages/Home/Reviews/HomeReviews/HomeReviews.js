@@ -20,26 +20,28 @@ const HomeReviews = () =>
     }, []);
 
     return (
-        <div id="reviews" className="bg-info my-3 py-3">
+        <div id="reviews" className="bg-light my-3 py-3">
             <h2 className="fw-bold text-center">
-                <u>Our </u><span className="text-white"><u>Happy</u></span><u> Customers</u>
+                <u>Our </u><span className="text-info"><u>Happy</u></span><u> Customers</u>
             </h2>
             <Carousel>
                 {
                     reviews.map(review => <Carousel.Item key={review._id}>
                         <Card className="w-75 text-center mx-auto my-5 shadow">
-                            <Card.Header>
-                                <Card.Title>
+                            <Card.Header className='bg-info'>
+                                <Card.Title className='text-white'>
                                     {review.productName}
                                 </Card.Title>
                             </Card.Header>
                             <Card.Body className="py-5">
-                                <Card.Text className="fs-3 fw-light">
-                                    <span className="text-muted">
-                                        <u>Customer Feedback</u>
+                                <Card.Text className="fw-light">
+                                    <span className="fs-3 text-muted border border-1 rounded-pill px-4 shadow-sm">
+                                        Customer Feedback
                                     </span>
                                     <br />
-                                    {review.feedback}
+                                    <span className='fs-4'>
+                                        {review.feedback}
+                                    </span>
                                 </Card.Text>
                                 <Card.Text style={{ color: "goldenrod", fontSize: "1.2rem" }} className="bg-white rounded">
                                     <span className="text-muted">Customer Rating: </span>

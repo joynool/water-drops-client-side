@@ -16,8 +16,8 @@ const Header = () =>
     const { user, logout } = useAuth();
 
     return (
-        <div className="sticky-top">
-            <Navbar bg="info" variant="dark">
+        <div className="sticky-top shadow">
+            <Navbar bg="light" variant="dark">
                 <Container className="flex-column flex-lg-row">
                     <Navbar.Text className="text-dark"><BsEnvelope /> info@waterdrops.com</Navbar.Text>
                     <Navbar.Text className="text-dark"><BsTelephone /> +880123456, +880654321</Navbar.Text>
