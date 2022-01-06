@@ -33,7 +33,7 @@ const ExploreProducts = () =>
                         <Row xs={1} md={3} className="g-4 py-4 py-lg-5">
                             {
                                 products.map(product => <Col key={product._id}>
-                                    <Card className="shadow p-2">
+                                    <Card className="p-2 home-products">
                                         <Card.Img variant="top" src={product.img} alt="Service Image" className="img-thumbnail" />
                                         <Card.Body>
                                             <Card.Title className="fw-light fs-3">{product.name}</Card.Title>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './HomeProducts.css';
 import { Card, Col, Row, Spinner, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -34,12 +35,12 @@ const HomeProducts = () =>
                         <Row xs={1} md={3} className="g-4 py-4 py-lg-5">
                             {
                                 homeProducts.map(product => <Col key={product._id}>
-                                    <Card className="shadow p-2">
+                                    <Card className="p-2 home-products">
                                         <Card.Img variant="top" src={product.img} alt="Service Image" className="img-thumbnail" />
                                         <Card.Body>
                                             <Card.Title className="fw-light fs-3">{product.name}</Card.Title>
                                             <Card.Text className="text-muted">
-                                                {product.description}
+                                                {(product.description).slice(0, 100)}
                                             </Card.Text>
                                         </Card.Body>
                                         <Card.Body className="d-flex justify-content-between">
