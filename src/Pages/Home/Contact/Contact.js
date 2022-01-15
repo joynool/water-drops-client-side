@@ -32,15 +32,16 @@ function Contact ()
                         label="Your Name"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="Your Name" />
+                        <Form.Control type="text" placeholder="Your Name" required />
                     </FloatingLabel>
                     <FloatingLabel controlId="floatingPassword" label="Your Email" className='mb-3'>
-                        <Form.Control type="email" placeholder="email@email.com" />
+                        <Form.Control type="email" placeholder="email@email.com" required />
                     </FloatingLabel>
                     <FloatingLabel controlId="floatingTextarea2" label="Your Message">
                         <Form.Control
                             as="textarea"
-                            placeholder="Leave a comment here"
+                            placeholder="Leave a message here"
+                            required
                             style={{ height: '150px' }}
                         />
                     </FloatingLabel>
