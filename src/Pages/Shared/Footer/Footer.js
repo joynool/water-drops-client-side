@@ -19,12 +19,15 @@ const Footer = () =>
                         <Navbar.Brand href="/home" className="mx-auto">
                             <Image src={logo} width="350px" alt="" fluid />
                         </Navbar.Brand>
-                        <div className="my-2 fs-5 text-white text-nowrap">
-                            <FaQuoteLeft />&nbsp; Healthcare first, not wealth care... &nbsp;<FaQuoteRight />
+                        <div className="my-2 text-white text-nowrap">
+                            <FaQuoteRight className='fs-3' />
+                            <span className='text-info fs-5 fw-light'>
+                                &nbsp; Healthcare first, not wealth care...
+                            </span>
                         </div>
                     </Nav>
                     <Nav className="flex-column text-center">
-                        <h4 className="fs-5 text-white text-decoration-underline">Links</h4>
+                        <h4 className="fs-5 text-info text-decoration-underline">Links</h4>
                         <Nav.Link as={HashLink} to="/home#home" className="m-0 p-0">
                             Home
                         </Nav.Link>
@@ -39,7 +42,7 @@ const Footer = () =>
                         </Nav.Link>
                     </Nav>
                     <Nav className="flex-column align-items-center mt-3">
-                        <h4 className="fs-5 text-white text-decoration-underline">Contact</h4>
+                        <h4 className="fs-5 text-info text-decoration-underline">Contact</h4>
                         <div className="fs-6 lh-1 text-white mt-3">
                             <p><BsGeoAlt />&nbsp;&nbsp;92/A, Dhaka - 1000, Bangladesh</p>
                             <p><BsEnvelope />&nbsp;&nbsp;Email: contact@waterdrops.com</p>
@@ -47,19 +50,19 @@ const Footer = () =>
                         </div>
                     </Nav>
                     <Nav className="flex-column align-items-center my-3">
-                        <h4 className="fs-5 text-white text-decoration-underline">Follow Us</h4>
+                        <h4 className="fs-5 text-info text-decoration-underline">Follow Us</h4>
                         <Nav>
                             <Nav.Link href="/home" className="text-white fs-3" title="Facebook">
-                                <FaFacebook className="btn-outline-info rounded p-1" />
+                                <FaFacebook className="btn-outline-light rounded p-1" />
                             </Nav.Link>
                             <Nav.Link href="/home" className="text-white fs-3" title="Twitter">
-                                <FaTwitter className="btn-outline-info rounded p-1" />
+                                <FaTwitter className="btn-outline-light rounded p-1" />
                             </Nav.Link>
                             <Nav.Link href="/home" className="text-white fs-3" title="Google">
-                                <FaGoogle className="btn-outline-info rounded p-1" />
+                                <FaGoogle className="btn-outline-light rounded p-1" />
                             </Nav.Link>
                             <Nav.Link href="/home" className="text-white fs-3" title="Instagram">
-                                <FaInstagram className="btn-outline-info rounded p-1" />
+                                <FaInstagram className="btn-outline-light rounded p-1" />
                             </Nav.Link>
                         </Nav>
                     </Nav>

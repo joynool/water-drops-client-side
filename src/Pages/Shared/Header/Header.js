@@ -31,17 +31,17 @@ const Header = () =>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className='text-center'>
-                        <Nav className='mx-auto fs-5'>
-                            <Nav.Link as={HashLink} to="/home#home">
+                        <Nav className='mx-auto'>
+                            <Nav.Link as={HashLink} to="/home#home" className='text-white btn-outline-info rounded-pill me-2'>
                                 Home
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/explore-product">
+                            <Nav.Link as={Link} to="/explore-product" className='text-white btn-outline-info rounded-pill me-2'>
                                 Explore Products
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/reviews">
+                            <Nav.Link as={Link} to="/reviews" className='text-white btn-outline-info rounded-pill me-2'>
                                 Customer Reviews
                             </Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#contact">
+                            <Nav.Link as={HashLink} to="/home#contact" className='text-white btn-outline-info rounded-pill'>
                                 Contact Us
                             </Nav.Link>
                         </Nav>
