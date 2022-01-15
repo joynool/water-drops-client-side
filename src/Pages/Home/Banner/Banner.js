@@ -10,7 +10,7 @@ import banner from './../../../images/banner.jpg';
 const Banner = () =>
 {
     return (
-        <div className="mb-lg-4">
+        <div className="mb-lg-4 d-flex flex-column justify-content-center align-items-center">
             <Image src={banner} alt="Water Drops Banner" fluid />
             <div style={{ marginTop: '-140px' }}>
                 <h3 className="text-center text-white fw-bold lh-1 m-0 p-0">

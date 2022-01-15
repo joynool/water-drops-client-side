@@ -30,8 +30,8 @@ const Header = () =>
                         <Image src={logo} width="250px" alt="water drops" fluid />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="ms-auto justify-content-center align-items-center">
+                    <Navbar.Collapse id="responsive-navbar-nav" className='text-center'>
+                        <Nav className='mx-auto fs-5'>
                             <Nav.Link as={HashLink} to="/home#home">
                                 Home
                             </Nav.Link>
@@ -41,6 +41,11 @@ const Header = () =>
                             <Nav.Link as={Link} to="/reviews">
                                 Customer Reviews
                             </Nav.Link>
+                            <Nav.Link as={HashLink} to="/home#contact">
+                                Contact Us
+                            </Nav.Link>
+                        </Nav>
+                        <Nav className='ms-auto'>
                             {
                                 user.email ? <NavDropdown title={user.displayName} id="collasible-nav-dropdown">
                                     <NavDropdown.Item className="my-3 fs-5 d-flex justify-content-center align-items-center" as={Link} to="/dashboard">
@@ -53,7 +58,7 @@ const Header = () =>
                                         </Button>
                                     </div>
                                 </NavDropdown> : <Nav.Link as={Link} to="/login">
-                                    <Button variant="outline-light" className="d-flex justify-content-center align-items-center">Login</Button>
+                                    <Button variant="outline-light">Login</Button>
                                 </Nav.Link>
                             }
                         </Nav>

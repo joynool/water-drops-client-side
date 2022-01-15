@@ -40,7 +40,7 @@ const HomeProducts = () =>
                                         <Card.Body>
                                             <Card.Title className="fw-light fs-3">{product.name}</Card.Title>
                                             <Card.Text className="text-muted">
-                                                {(product.description).slice(0, 100)}
+                                                {product.description}
                                             </Card.Text>
                                         </Card.Body>
                                         <Card.Body className="d-flex justify-content-between">

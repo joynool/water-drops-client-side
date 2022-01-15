@@ -19,12 +19,12 @@ const Footer = () =>
                         <Navbar.Brand href="/home" className="mx-auto">
                             <Image src={logo} width="350px" alt="" fluid />
                         </Navbar.Brand>
-                        <div className="my-2 text-white">
+                        <div className="my-2 fs-5 text-white text-nowrap">
                             <FaQuoteLeft />&nbsp; Healthcare first, not wealth care... &nbsp;<FaQuoteRight />
                         </div>
                     </Nav>
                     <Nav className="flex-column text-center">
-                        <h4 className="text-white">Links</h4>
+                        <h4 className="fs-5 text-white text-decoration-underline">Links</h4>
                         <Nav.Link as={HashLink} to="/home#home" className="m-0 p-0">
                             Home
                         </Nav.Link>
@@ -34,12 +34,12 @@ const Footer = () =>
                         <Nav.Link as={HashLink} to="/home#reviews" className="m-0 p-0">
                             Customer Reviews
                         </Nav.Link>
-                        <Nav.Link as={HashLink} to="/home" className="m-0 p-0">
-                            FAQ
+                        <Nav.Link as={HashLink} to="/home#contact" className="m-0 p-0">
+                            Contact Us
                         </Nav.Link>
                     </Nav>
                     <Nav className="flex-column align-items-center mt-3">
-                        <h4 className="text-white">Contact Us</h4>
+                        <h4 className="fs-5 text-white text-decoration-underline">Contact</h4>
                         <div className="fs-6 lh-1 text-white mt-3">
                             <p><BsGeoAlt />&nbsp;&nbsp;92/A, Dhaka - 1000, Bangladesh</p>
                             <p><BsEnvelope />&nbsp;&nbsp;Email: contact@waterdrops.com</p>
@@ -47,7 +47,7 @@ const Footer = () =>
                         </div>
                     </Nav>
                     <Nav className="flex-column align-items-center my-3">
-                        <h4 className="text-white">Follow Us</h4>
+                        <h4 className="fs-5 text-white text-decoration-underline">Follow Us</h4>
                         <Nav>
                             <Nav.Link href="/home" className="text-white fs-3" title="Facebook">
                                 <FaFacebook className="btn-outline-info rounded p-1" />
@@ -66,7 +66,7 @@ const Footer = () =>
                 </Container>
             </Navbar>
             <Navbar bg="light" variant="dark">
-                <Navbar.Text className="text-dark mx-auto">&copy; 2021, Water Drops. All Rights Reserved.</Navbar.Text>
+                <Navbar.Text className="text-dark mx-auto">&copy; 2022, Water Drops. All Rights Reserved.</Navbar.Text>
             </Navbar>
         </>
     );
