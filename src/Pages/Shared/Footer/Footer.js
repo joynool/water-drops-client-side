@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { FaQuoteRight } from "react-icons/fa";
 import { BsGeoAlt, BsTelephone, BsEnvelope } from 'react-icons/bs';
 import logo from './../../../images/logo.png';
 import { FaFacebook, FaGoogle, FaInstagram, FaTwitter } from "react-icons/fa";
