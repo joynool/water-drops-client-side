@@ -24,7 +24,7 @@ const DeliveryService = () =>
                     <li>8:00 – 22:00</li>
                 </ul>
                 <div className="text-center my-4">
-                    <Button as={Link} to="/explore-product" variant="outline-dark" className="rounded-pill px-4 py-3 shadow">Make Your Order</Button>
+                    <Button as={Link} to="/explore-product" variant="outline-info" className="rounded-pill px-4 py-3 shadow">Make Your Order</Button>
                 </div>
             </div>
         </div>

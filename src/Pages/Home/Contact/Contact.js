@@ -45,7 +45,7 @@ function Contact ()
                             style={{ height: '150px' }}
                         />
                     </FloatingLabel>
-                    <Button type='submit' variant="outline-dark" className="rounded-pill mt-5 px-5 py-3 shadow">Send Message</Button>
+                    <Button type='submit' variant="outline-info" className="rounded-pill mt-5 px-5 py-3 shadow">Send Message</Button>
                 </Form>
             </Container>
         </div>

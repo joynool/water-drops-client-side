@@ -47,7 +47,7 @@ const HomeProducts = () =>
                                             <Card.Text className="fw-bold">
                                                 Price: $ {product.price}
                                             </Card.Text>
-                                            <Button as={Link} to={`/order/${product._id}`} variant="outline-dark">Order Now</Button>
+                                            <Button as={Link} to={`/order/${product._id}`} variant="outline-info">Order Now</Button>
                                         </Card.Body>
                                     </Card>
                                 </Col>
